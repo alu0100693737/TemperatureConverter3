@@ -13,9 +13,14 @@ input       {
               font-size:large;       }
 body
 {
- background-color:#b0c4de;  /* blue */
+ background-color: black;
+ background-image: url("images/horses.jpg");
+background-size: 80%;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
  font-size:large;
- font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+ font-family: "	Courier New", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
 }
 
 h1 {
