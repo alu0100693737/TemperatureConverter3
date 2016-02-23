@@ -6,14 +6,17 @@ function calculate() {
   var regexp = /(^[-+]?\d+(?:\.\d*)?)(?:[eE]?([-+]?\d+))?\s*([fFcC])/;
 
   var m = temp.match(regexp);
-
   if (m) {
+
+    for (var i = 0; i < m.length; i++) {
+       console.log(m[i]);
+    }
     var num = m[1];
     var type = m[2];
     num = parseFloat(num);
     if (type == 'c' || type == 'C') {
       result = (num * 9/5)+32;
-      result = result.toFixed(1)+" Farenheit"
+      result = result.toFixed(1)+" Farenheit";
     }
     else {
       result = (num - 32)*5/9;
