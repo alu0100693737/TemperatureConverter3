@@ -3,7 +3,8 @@ function calculate() {
   var result;
   var temp = original.value;
   //expresion regular. Recordar ?: matches
-  var regexp = /(^[-+]?\d+(?:\.\d*)?)(?:[eE]?([-+]?\d+))?\s*([fFcC])/;
+
+  var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfF])(e|el|els|elsi|elsiu|elsius|a|ar|are|aren|arenh|arenhe|arenhei|arenheit)?\s*$/i;
 
   var m = temp.match(regexp);
   if (m) {
@@ -21,6 +22,9 @@ function calculate() {
     else {
       result = (num - 32)*5/9;
       result = result.toFixed(1)+" Celsius"
+    }
+    for (var i = 0; i < m.length; i++) {
+
     }
     converted.innerHTML = result;
   }
