@@ -8,28 +8,24 @@
 
      <script type="text/javascript" src="temperature.js"></script>
   </head>
-  <body><center>
+  <body>
+    <center>
+      <br><br>
     <h1>Temperature Converter</h1>
+    <br><br>
     <table>
       <tr>
-        <th>Enter  Temperature (examples: 32F, 45.5e-5C, -2.5f): &nbsp &nbsp &nbsp</th>
-
-        <td>
-          <form id="formulario" onsubmit="calculate();">
-          <input id="original"
-                 placeholder="32F"
-                 size="50"
-                 title = "Escribe un número seguido de una de las letras 'F' o 'C'"
-                 pattern="([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfF])(e|el|els|elsi|elsiu|elsius|a|ar|are|aren|arenh|arenhe|arenhei|arenheit)?\s*$"
-          />
-          </form>
-        </td>
+        <th>Enter  Temperature (examples: 32F, 45.5e-4C, -2.5f):&nbsp &nbsp &nbsp    </th>
+        <td><input id="original" autofocus onchange="calculate();" placeholder="32F" size="50"></td>
+      </tr>
+      <tr>
+        <th><br>Converted Temperature: &nbsp   </th>
+        <td><br><span class="output" id="converted"></span></td>
       </tr>
     </table>
-    <br><br><br><br>
-    <a href="https://github.com/alu0100693737">My Github</a> <a href="http://alu0100693737.github.io/">Mi página personal</a><br>
-    <br><br><p><strong>Iván García Campos </strong></p><br>
-  </center>
+
+    <br><br><br>
+    <a href="https://github.com/alu0100693737">My Github</a> <a href="http://alu0100693737.github.io/">Mi página personal</a><br> <br><br>
     <center><div id=enlaces>
 
       <a id=link href="https://nodejs.org" target="_blank">NodeJS</a>
@@ -41,7 +37,9 @@
       <a id=link href="http://daringfireball.net/projects/markdown/"target="_blank">Markdown</a>
       <a id=link href="http://www.w3schools.com/jsref/jsref_obj_regexp.asp"target="_blank">Regex JavaScript</a>
     </div></center>
-    <br><br>
+    <br><center><div id=nombre>Ivan Garcia Campos</div></center>
   </center>
+
+
   </body>
 </html>

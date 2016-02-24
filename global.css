@@ -6,6 +6,7 @@ th, td      {
                font-weight: normal;
                text-transform: uppercase;
                font-family: "Tw Cen MT", cursive;
+               font-size: 20px;
                background-color: rgba(255, 255, 255, 0.7);
 
             }     /* Don't center table cells  */
@@ -67,6 +68,17 @@ h6 {
     font-weight: 50px;
   }
 
+  #nombre{
+    border-radius: 10px 10px 10px 10px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px;
+    font-family: "Tw Cen MT", cursive;
+    font-size: 20px;
+
+  }
+
   h2:hover{
     color: #fff;
     position: relative;
@@ -78,6 +90,8 @@ h6 {
     color: black;
     text-decoration: none;
     padding: 15px;
+    font-family: "Tw Cen MT", cursive;
+    font-size: 20px;
   }
 
   a:hover {
