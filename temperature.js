@@ -4,6 +4,8 @@ function calculate() {
   var temp = original.value;
   //expresion regular. Recordar ?: matches
 
+
+
   var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfF])(e|el|els|elsi|elsiu|elsius|a|ar|are|aren|arenh|arenhe|arenhei|arenheit)?\s*$/i;
 
   var m = temp.match(regexp);
