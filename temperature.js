@@ -2,11 +2,15 @@
 function calculate() {
   var result;
   var temp = original.value;
-  var regexp = /([-+]?\d+(?:\.\d*)?)\s*([fFcC])/;
-  
+  var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfF])(e|el|els|elsi|elsiu|elsius|a|ar|are|aren|arenh|arenhe|arenhei|arenheit)?\s*$/i;
+
+
   var m = temp.match(regexp);
-  
+
   if (m) {
+    for (var i = 0; i < m.length; i++) {
+       console.log(m[i]);
+    }
     var num = m[1];
     var type = m[2];
     num = parseFloat(num);
