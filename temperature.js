@@ -6,7 +6,7 @@ function calculate() {
 
 
 
-  var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfF])(e|el|els|elsi|elsiu|elsius|a|ar|are|aren|arenh|arenhe|arenhei|arenheit)?\s*$/i;
+  var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfF])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit))?\s*$/i;
 
   var m = temp.match(regexp);
   if (m) {
@@ -28,9 +28,17 @@ function calculate() {
     for (var i = 0; i < m.length; i++) {
 
     }
-    converted.innerHTML = result;
+
+    document.getElementById("converted").innerHTML= result;
+    return true;
+
+    //alert(result);
   }
   else {
-    converted.innerHTML = "ERROR! Try something like '-8.2e-3 C' instead";
+    alert("ERROR! Try something like '-4.2C' instead");
+    return false;
+    //converted.innerHTML = "ERROR! Try something like '-8.2e-3 C' instead";
   }
+  return false;
+
 }
