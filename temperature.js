@@ -30,12 +30,11 @@ function calculate() {
     }
 
     document.getElementById("converted").innerHTML= result;
-    return true;
 
     //alert(result);
   }
   else {
-    alert("ERROR! Try something like '-4.2C' instead");
+    document.getElementById("converted").innerHTML = "ERROR! Try something like '-4.2C' instead";
     return false;
     //converted.innerHTML = "ERROR! Try something like '-8.2e-3 C' instead";
   }
