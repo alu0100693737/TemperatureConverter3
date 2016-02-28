@@ -3,9 +3,6 @@ function calculate() {
   var result;
   var temp = original.value;
   //expresion regular. Recordar ?: matches
-
-
-
   var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfF])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit))?\s*$/i;
 
   var m = temp.match(regexp);
@@ -35,7 +32,7 @@ function calculate() {
     //alert(result);
   }
   else {
-    alert("ERROR! Try something like '-4.2C' instead");
+    document.getElementById("converted").innerHTML= "ERROR! Try something like '-4.2C' instead";
     return false;
     //converted.innerHTML = "ERROR! Try something like '-8.2e-3 C' instead";
   }
