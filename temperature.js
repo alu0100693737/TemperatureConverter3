@@ -2,42 +2,60 @@
 
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
-/*exports.Expresion = function Expresion(num, tipo) {
-  this.num = num;
-  this.tipo = tipo;
-  console.log(num + " " + tipo);
-  this.mensaje = function mensaje() {
-    return "Recogido expresion correcta";
-  }
-}*/
-
-function Converter(num, tipo) {
+/**Constructor 'clase' Converter*/
+function Converter(num, tipo) {//constructor
   this.num = num;
   this.tipo = tipo;
 }
-//Converter.prototype = new Expresion();
+//Converter.prototype = new Expresion(); //herencia
 
+/**Metodo que devuelve la parte numerica de la expresion a evaluar*/
+Converter.prototype.getNum = function() {
+  return this.num;
+}
+
+/**Metodo que asigna al atributo num un valor*/
+Converter.prototype.setNum = function(num) {
+  getNum() = num;
+}
+
+/**Metodo que devuelve el tipo de la expresion a evaluar*/
+Converter.prototype.getTipo = function() {
+  return this.tipo;
+}
+
+/**Metodo que asigna al atributo tipo una medida Celsius o Farenheit*/
+Converter.prototype.setTipo = function(tipo) {
+  getTipo() = tipo;
+}
+
+Converter.prototype.mensajeError = function() {
+    converted.innerHTML = "ERROR! Try something like '-8.2e-3 C' instead";
+  console.error("Esta condicion no deberia ocurrir");
+}
+
+/**Determina si el tipo es Celsius o Farenheit*/
 Converter.prototype.getConverter = function() {
   var result;
     if (this.tipo == 'c' || this.tipo == 'C') {
       result = (this.num * 9/5)+32;
       result = result.toFixed(1)+" Farenheit";
-    }
-    else {
+    }else if (this.tipo == 'f' || this.tipo == 'F') {
       result = (this.num - 32)*5/9;
       result = result.toFixed(1)+" Celsius"
+    }else{
+      this.mensajeError();
     }
     return result;
 }
-function calculate() {
 
+function calculate() {
   var temp = original.value;
   //expresion regular. Recordar ?: matches
   var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfF])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit))?\s*$/i;
 
   var m = temp.match(regexp);
   if (m) {
-
     for (var i = 0; i < m.length; i++) {
        console.log(m[i]);
     }
@@ -46,16 +64,11 @@ function calculate() {
     num = parseFloat(num);
     var resultado = new Converter(num, type);
     var final = resultado.getConverter();
-    alert(final);
-    //document.getElementById("converted").innerHTML= resultado;
+    converted.innerHTML = final;
+    //document.getElementById("converted").innerHTML= "HOAL";
     return true;
     } else {
-      alert("ERROR! Try something like '-4.2C' instead");
-    //document.getElementById("converted").innerHTML= "ERROR! Try something like '-4.2C' instead";
-//var expresion = new Expresion(num, tipo);
-//deberia document.getElementById("converted").innerHTML = expresion.mostrar();
-    return console.log("No encontrado matches");
-    //converted.innerHTML = "ERROR! Try something like '-8.2e-3 C' instead";
+      converted.innerHTML = "ERROR! Try something like '-8.2e-3 C' instead";
   }
 }
 

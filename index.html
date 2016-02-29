@@ -14,24 +14,25 @@
     <h1>Temperature Converter</h1>
     <br><br>
 
-
     <table>
      <tr>
        <th>Enter  Temperature (examples: 32F, 45C, -2.5f):</th>
        <td>
-         <form id="formulario" onsubmit="calculate();">
+          <div id="formulario">
          <input id="original" type="text"
                 placeholder="32F"
                 size="50"
                 title = "Escribe un número seguido de una de las letras 'F' o 'C'"
                 pattern="^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfF])(e|el|els|elsi|elsiu|elsius|a|ar|are|aren|arenh|arenhe|arenhei|arenheit)?\s*$"
          />
-         </form>
+         <button onclick=calculate()><b>Enviar</button>
+       </div>
+
        </td>
      </tr>
      <tr>
        <th><br>Converted Temperature: &nbsp   </th>
-       <td><br><span class="output" id="converted"></span></td>
+       <td><br><div id="converted"></div></td>
      </tr>
    </table>
     <!--<table>
