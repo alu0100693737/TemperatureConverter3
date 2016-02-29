@@ -1,38 +1,35 @@
-(function(exports){//clausura
+//(function(exports){//clausura
 
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
-exports.Expresion = function Expresion(num, tipo) {
+/*exports.Expresion = function Expresion(num, tipo) {
   this.num = num;
   this.tipo = tipo;
   console.log(num + " " + tipo);
   this.mensaje = function mensaje() {
     return "Recogido expresion correcta";
   }
-}
-
-Converter.prototype = new Expresion();
+}*/
 
 function Converter(num, tipo) {
   this.num = num;
   this.tipo = tipo;
+}
+//Converter.prototype = new Expresion();
+
+Converter.prototype.getConverter = function() {
   var result;
-  this.calcular = function calcular(num, tipo) {
     if (this.tipo == 'c' || this.tipo == 'C') {
-      result = (num * 9/5)+32;
+      result = (this.num * 9/5)+32;
       result = result.toFixed(1)+" Farenheit";
     }
     else {
-      result = (num - 32)*5/9;
+      result = (this.num - 32)*5/9;
       result = result.toFixed(1)+" Celsius"
     }
     return result;
-  }
 }
-
-exports.Converter = Converter;
-
-exports.calculate = function calculate() {
+function calculate() {
 
   var temp = original.value;
   //expresion regular. Recordar ?: matches
@@ -47,22 +44,14 @@ exports.calculate = function calculate() {
     var num = m[1];
     var type = m[2];
     num = parseFloat(num);
-
-    if (type == 'c' || type == 'C') {
-      var resultado = new Converter(num, type)
-      result = (num * 9/5)+32;
-      result = result.toFixed(1)+" Farenheit";
-    }
-    else {
-      result = (num - 32)*5/9;
-      result = result.toFixed(1)+" Celsius"
-    }
-
-    document.getElementById("converted").innerHTML= result;
+    var resultado = new Converter(num, type);
+    var final = resultado.getConverter();
+    alert(final);
+    //document.getElementById("converted").innerHTML= resultado;
     return true;
-  }
-  else {
-    document.getElementById("converted").innerHTML= "ERROR! Try something like '-4.2C' instead";
+    } else {
+      alert("ERROR! Try something like '-4.2C' instead");
+    //document.getElementById("converted").innerHTML= "ERROR! Try something like '-4.2C' instead";
 //var expresion = new Expresion(num, tipo);
 //deberia document.getElementById("converted").innerHTML = expresion.mostrar();
     return console.log("No encontrado matches");
@@ -70,5 +59,4 @@ exports.calculate = function calculate() {
   }
 }
 
-
-})(this);//clausura
+//})(this);//clausura
