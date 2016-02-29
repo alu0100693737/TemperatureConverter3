@@ -1,41 +1,47 @@
 //(function(exports){//clausura
-
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
-/**Constructor 'clase' Converter*/
-function Converter(num, tipo) {//constructor
+/**Constructor 'clase' Medida*/
+function Medida(num, tipo) {//constructor
   this.num = num;
   this.tipo = tipo;
 }
-//Converter.prototype = new Expresion(); //herencia
+
+/**Constructor clase Temperatura*/
+function Temperatura(num,  tipo) {
+  Medida.call(this, num, tipo);
+}
+
+Temperatura.prototype = new Medida(); //herencia
 
 /**Metodo que devuelve la parte numerica de la expresion a evaluar*/
-Converter.prototype.getNum = function() {
+Medida.prototype.getNum = function() {
   return this.num;
 }
 
 /**Metodo que asigna al atributo num un valor*/
-Converter.prototype.setNum = function(num) {
+Medida.prototype.setNum = function(num) {
   getNum() = num;
 }
 
 /**Metodo que devuelve el tipo de la expresion a evaluar*/
-Converter.prototype.getTipo = function() {
+Medida.prototype.getTipo = function() {
   return this.tipo;
 }
 
 /**Metodo que asigna al atributo tipo una medida Celsius o Farenheit*/
-Converter.prototype.setTipo = function(tipo) {
+Medida.prototype.setTipo = function(tipo) {
   getTipo() = tipo;
 }
 
-Converter.prototype.mensajeError = function() {
+/**Metodo que retorna error. No debe poder ejecutarse esta funcion. Error grave*/
+Medida.prototype.mensajeError = function() {
     converted.innerHTML = "ERROR! Try something like '-8.2e-3 C' instead";
   console.error("Esta condicion no deberia ocurrir");
 }
 
 /**Determina si el tipo es Celsius o Farenheit*/
-Converter.prototype.getConverter = function() {
+Temperatura.prototype.getMedida = function() {
   var result;
     if (this.tipo == 'c' || this.tipo == 'C') {
       result = (this.num * 9/5)+32;
@@ -49,10 +55,11 @@ Converter.prototype.getConverter = function() {
     return result;
 }
 
+/**Funcion llamada en el html, creador de objeto Medida*/
 function calculate() {
   var temp = original.value;
   //expresion regular. Recordar ?: matches
-  var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfF])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit))?\s*$/i;
+  var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?\s*$/i;
 
   var m = temp.match(regexp);
   if (m) {
@@ -62,8 +69,8 @@ function calculate() {
     var num = m[1];
     var type = m[2];
     num = parseFloat(num);
-    var resultado = new Converter(num, type);
-    var final = resultado.getConverter();
+    var resultado = new Temperatura(num, type);
+    var final = resultado.getMedida();
     converted.innerHTML = final;
     //document.getElementById("converted").innerHTML= "HOAL";
     return true;

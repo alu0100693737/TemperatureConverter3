@@ -23,11 +23,13 @@
                 placeholder="32F"
                 size="50"
                 title = "Escribe un número seguido de una de las letras 'F' o 'C'"
-                pattern="^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfF])(e|el|els|elsi|elsiu|elsius|a|ar|are|aren|arenh|arenhe|arenhei|arenheit)?\s*$"
+                pattern="^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?\s*$";
+
          />
+         <!--|a|ar|are|aren|arenh|arenhe|arenhei|arenheit)?\s*$"-->
+         <!--\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*(([cC(e|el|els|elsi|elsiu|elsius)?])|([fF(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)?)])\s*$"-->
          <button onclick=calculate()><b>Enviar</button>
        </div>
-
        </td>
      </tr>
      <tr>
@@ -49,7 +51,7 @@
     <br><br><br><a href="./tests">Tests</a> <a href="https://github.com/alu0100693737/ConversorTemperatura2/tree/gh-pages">Repositorio</a><br><br><br>
     <a href="https://github.com/alu0100693737">My Github</a> <a href="http://alu0100693737.github.io/">Mi página personal</a> <a href="./pattern.html">Patrones Expresiones Regulares</a><br>
     <br><br>
-    <center><div id=enlaces>
+    <!--<center><div id=enlaces>
 
       <a id=link href="https://nodejs.org" target="_blank">NodeJS</a>
       <a id=link href="http://expressjs.com"target="_blank">Express</a>
@@ -59,7 +61,7 @@
       <a id=link href="https://c9.io"target="_blank">Cloud 9 IDE</a>
       <a id=link href="http://daringfireball.net/projects/markdown/"target="_blank">Markdown</a>
       <a id=link href="http://www.w3schools.com/jsref/jsref_obj_regexp.asp"target="_blank">Regex JavaScript</a>
-    </div></center>
+    </div></center>-->
     <br>
     <p><strong>Iván García Campos </strong></p><br>
   </center>

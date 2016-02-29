@@ -41,6 +41,7 @@ suite('temperature', function() {
     });
 });
 
+
 describe("Pruebas Sinon", function() {
   var sandbox;
 
@@ -60,7 +61,7 @@ describe("Pruebas Sinon", function() {
 
   // ...
 
-  describe("#calculate", function() {
+  /*describe("#calculate", function() {
     it("should log an error if target is passed in", function() {
       (new calculate2(20));
 
@@ -75,7 +76,7 @@ describe("Pruebas Sinon", function() {
       sinon.assert.calledOnce(console.error);
       sinon.assert.calledWithExactly(console.error, "No encontrado matches")
 
-    });
+    });*/
 
 
     /*it("should log greetings", function() {
@@ -84,6 +85,6 @@ describe("Pruebas Sinon", function() {
       sinon.assert.notCalled(console.error);
       sinon.assert.calledOnce(console.log);
       sinon.assert.calledWithExactly(console.log, "Kate greets Baby")
-    });*/
-  });
+    });
+  });*/
 });
