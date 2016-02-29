@@ -1,5 +1,25 @@
+(function(exports){//clausura
+
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
-function calculate() {
+
+exports.Expresion = function Expresion(valor, medida) {
+  this.valor = valor;
+  this.tipo = medida;
+  console.log(valor + " " + medida);
+  this.mensaje = function mensaje() {
+    return "Recogido expresion correcta";
+  }
+}
+
+Converter.prototype = new Expresion();
+
+function Converter(valor, medida) {
+  this.valor = valor;
+  this.tipo = tipo;
+  var result;
+  this.calcular = function calcular
+}
+exports.calculate = function calculate() {
   var result;
   var temp = original.value;
   //expresion regular. Recordar ?: matches
@@ -37,6 +57,13 @@ function calculate() {
     //converted.innerHTML = "ERROR! Try something like '-8.2e-3 C' instead";
   }
 }
-function calculate2(prueba){
+
+
+export.calculate2 = function calculate2(prueba){
     return console.error("missing target");
 }
+
+
+
+
+})(this);//clausura
