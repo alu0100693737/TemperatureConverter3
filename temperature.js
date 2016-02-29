@@ -33,9 +33,10 @@ function calculate() {
   }
   else {
     document.getElementById("converted").innerHTML= "ERROR! Try something like '-4.2C' instead";
-    return false;
+    return console.error("No encontrado matches");
     //converted.innerHTML = "ERROR! Try something like '-8.2e-3 C' instead";
   }
-  return false;
-
+}
+function calculate2(prueba){
+    return console.error("missing target");
 }
