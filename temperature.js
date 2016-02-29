@@ -3,9 +3,6 @@ function calculate() {
   var result;
   var temp = original.value;
   //expresion regular. Recordar ?: matches
-
-
-
   var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfF])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit))?\s*$/i;
 
   var m = temp.match(regexp);
@@ -34,10 +31,16 @@ function calculate() {
     //alert(result);
   }
   else {
+<<<<<<< HEAD
     document.getElementById("converted").innerHTML = "ERROR! Try something like '-4.2C' instead";
     return false;
+=======
+    document.getElementById("converted").innerHTML= "ERROR! Try something like '-4.2C' instead";
+    return console.error("No encontrado matches");
+>>>>>>> gh-pages
     //converted.innerHTML = "ERROR! Try something like '-8.2e-3 C' instead";
   }
-  return false;
-
+}
+function calculate2(prueba){
+    return console.error("missing target");
 }

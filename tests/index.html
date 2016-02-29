@@ -5,6 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="mocha.css" />
+<<<<<<< HEAD
     </head>
     <body>
 	<div id="mocha"></div>
@@ -16,6 +17,22 @@
 	<!--<script src="blanket.js"
 	    data-cover-adapter="mocha-blanket.js"></script>-->
 
+=======
+  <link rel="stylesheet" href="global.css" />
+    </head>
+    <body>
+
+  <div id="mocha"></div>
+	<input id="original" placeholder="32F" size="50">
+	<span class="output" id="converted"></span>
+
+	<script src="mocha.js"></script>
+	<script src="chai.js"></script>
+  <script src="sinon-1.7.1.js"></script>
+	<script src="blanket.js"
+	    data-cover-adapter="mocha-blanket.js"></script>
+
+>>>>>>> gh-pages
 	<script>mocha.setup('bdd')</script>
 	<script>mocha.setup('tdd')</script>
 	<script src="tests.js" ></script>
