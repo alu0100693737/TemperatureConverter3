@@ -1,6 +1,6 @@
 //(function(exports){//clausura
+//var XRegExp = require('xregexp');
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
-
 /**Constructor 'clase' Medida*/
 function Medida(num, tipo) {//constructor
   this.num = num;
@@ -42,13 +42,21 @@ Medida.prototype.mensajeError = function() {
 
 /**Determina si el tipo es Celsius o Farenheit*/
 Temperatura.prototype.getMedida = function() {
-  var result;
+  var result, result1;
     if (this.tipo == 'c' || this.tipo == 'C') {
-      result = (this.num * 9/5)+32;
-      result = result.toFixed(1)+" Farenheit";
+      result = (this.num * 9/5)+32; //farenheint
+      result1 = this.num + 273.15;//kelvin
+      result = result.toFixed(2)+ " Farenheit and "+ result1.toFixed(2) + " Kelvin";
+
     }else if (this.tipo == 'f' || this.tipo == 'F') {
-      result = (this.num - 32)*5/9;
-      result = result.toFixed(1)+" Celsius"
+      result = (this.num - 32)*5/9; //celsius
+      result1 = 5*(this.num -32)/9 + 273.15; //kelvin
+      result = result.toFixed(2)+" Celsius and " + result1.toFixed(2) + " Kelvin";
+    }else if (this.tipo == 'k' || this.tipo == 'K') {
+      console.log("Estamos ante un kelvin");
+      result = this.num - 273.15;
+      result1 = 9*(this.num -273.15)/5 + 32;
+      result = result.toFixed(2)+" Celsius and " + result1.toFixed(2) + " Farenheit";
     }else{
       this.mensajeError();
     }
@@ -59,8 +67,10 @@ Temperatura.prototype.getMedida = function() {
 function calculate() {
   var temp = original.value;
   //expresion regular. Recordar ?: matches
-  var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?\s*$/i;
-
+  /*var regexp = XRegExp('(?<expresion>\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK]))' +
+                      '(?<to> to)' +
+                      '(?<cambio> [fFcCkK]$)ccc', 'x');*/
+  var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?\s*$/;
   var m = temp.match(regexp);
   if (m) {
     for (var i = 0; i < m.length; i++) {
