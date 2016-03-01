@@ -14,6 +14,21 @@ function Temperatura(num,  tipo) {
 
 Temperatura.prototype = new Medida(); //herencia
 
+function Celsius(num, tipo){
+  Temperatura.call(this, num, tipo);
+}
+function Farenheit(num, tipo){
+  Temperatura.call(this, num, tipo);
+}
+function Kelvin(num, tipo){
+  Temperatura.call(this, num, tipo);
+}
+
+Celsius.prototype = new Temperatura(); //herencia
+Farenheit.prototype = new Temperatura(); //herencia
+Kelvin.prototype = new Temperatura(); //herencia
+
+
 /**Metodo que devuelve la parte numerica de la expresion a evaluar*/
 Medida.prototype.getNum = function() {
   return this.num;
@@ -41,26 +56,29 @@ Medida.prototype.mensajeError = function() {
 }
 
 /**Determina si el tipo es Celsius o Farenheit*/
-Temperatura.prototype.getMedida = function() {
+Celsius.prototype.getMedida = function() {
   var result, result1;
-    if (this.tipo == 'c' || this.tipo == 'C') {
       result = (this.num * 9/5)+32; //farenheint
       result1 = this.num + 273.15;//kelvin
       result = result.toFixed(2)+ " Farenheit and "+ result1.toFixed(2) + " Kelvin";
-
-    }else if (this.tipo == 'f' || this.tipo == 'F') {
-      result = (this.num - 32)*5/9; //celsius
-      result1 = 5*(this.num -32)/9 + 273.15; //kelvin
-      result = result.toFixed(2)+" Celsius and " + result1.toFixed(2) + " Kelvin";
-    }else if (this.tipo == 'k' || this.tipo == 'K') {
-      console.log("Estamos ante un kelvin");
-      result = this.num - 273.15;
-      result1 = 9*(this.num -273.15)/5 + 32;
-      result = result.toFixed(2)+" Celsius and " + result1.toFixed(2) + " Farenheit";
-    }else{
-      this.mensajeError();
-    }
     return result;
+}
+
+Farenheit.prototype.getMedida = function() {
+  var result, result1;
+  result = (this.num - 32)*5/9; //celsius
+  result1 = 5*(this.num -32)/9 + 273.15; //kelvin
+  result = result.toFixed(2)+" Celsius and " + result1.toFixed(2) + " Kelvin";
+  return result;
+}
+
+Kelvin.prototype.getMedida = function() {
+  var result, result1;
+  console.log("Estamos ante un kelvin");
+  result = this.num - 273.15;
+  result1 = 9*(this.num -273.15)/5 + 32;
+  result = result.toFixed(2)+" Celsius and " + result1.toFixed(2) + " Farenheit";
+  return result;
 }
 
 /**Funcion llamada en el html, creador de objeto Medida*/
@@ -79,7 +97,15 @@ function calculate() {
     var num = m[1];
     var type = m[2];
     num = parseFloat(num);
-    var resultado = new Temperatura(num, type);
+    if (type == 'c' || type == 'C') {
+      var resultado = new Celsius(num, type);
+    }else if (type == 'f' || type == 'F') {
+      var resultado = new Farenheit(num, type);
+    }else if (type == 'k' || type == 'K') {
+      var resultado = new Kelvin(num, type);
+    }else{//Esta condicion no debe darse
+      converted.innerHTML = "ERROR! Try something like '-8.2e-3 C' instead!!!!";
+    }
     var final = resultado.getMedida();
     converted.innerHTML = final;
     //document.getElementById("converted").innerHTML= "HOAL";
