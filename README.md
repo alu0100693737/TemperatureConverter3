@@ -1,13 +1,15 @@
 # ETSII ULL Grado de Informatica
 
-## Práctica: Conversor en JavaScript de grados Celsius a Farenheit y viceversa
+## Práctica: Práctica OOP en JS
+###Conversor en JavaScript de grados Celsius, Farenheit y Kelvin
 
 ###Que aprendemos
+* Uso de clases y herencia en JavaScript (prototype)
+* Encapsulacion
+* Uso de la clase Medida -> Temperatura -> : Celsius, Farenheit y Kelvin
 * Uso de pruebas con Mocha y Chai
-* Uso de sinon
-* Uno de blanket.js para cubrimiento de codigo
-* Gulpfile?
-* RegExp extendidas
+* Gulpfile
+* RegExp extendidas? No funciona XRegExp not defined
 
 ### Que aprendimos
 
@@ -18,8 +20,7 @@
 * Uso de Emmet (instale el plugin para su editor)
 * Rama Html5Pattern para uso de calculate mediante un form.
 
-
-
+Este repositorio aloja la práctica de conversión de tipos, realizada con html, css y javascript, usando POO y haciendo uso de la herencia en javascript.
 
 ### Despliegue en github.io
 
@@ -28,3 +29,7 @@
 ### Pag personal
 
 * http://alu0100693737.github.io/
+
+### Repositorio Github
+
+* https://github.com/alu0100693737/ConversorTemperatura2/tree/gh-pages

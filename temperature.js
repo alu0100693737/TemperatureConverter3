@@ -28,7 +28,6 @@ Celsius.prototype = new Temperatura(); //herencia
 Farenheit.prototype = new Temperatura(); //herencia
 Kelvin.prototype = new Temperatura(); //herencia
 
-
 /**Metodo que devuelve la parte numerica de la expresion a evaluar*/
 Medida.prototype.getNum = function() {
   return this.num;
