@@ -114,7 +114,7 @@ function calculate() {
   var dato = XRegExp('(?<expresion>  ([-+]?[0-9]+(?:\.[0-9]+)?(?:e[+-]?[0-9]+)?)[ ]*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?) # expresion \n\
                       (?<opcional> [ ]*([Tt][oO])?[ ]*)   #opcional  \n\
                       (?<medida>   [ ]*[CcKkFf])   #medida ', 'x');
-
+                      
   // XRegExp.exec gives you named backreferences on the match result
   var match = XRegExp.exec(original.value, dato);
 
