@@ -7,6 +7,7 @@
      <link href="global.css" rel="stylesheet" type="text/css">
 
      <script type="text/javascript" src="temperature.js"></script>
+     <script type="text/javascript" src="http://xregexp.com/v/3.1.0/xregexp-all.js"></script>
 
   </head>
   <body>
@@ -17,19 +18,17 @@
 
     <table>
      <tr>
-       <th>Enter  Temperature (examples: 32F, 45k, -2.5e-2f):</th>
+       <th >Enter  Temperature (examples): <div style="text-transform: none;"> <br> *   132Fare to C   <br> * 45kelvin to C <br> * -2.5e-2Cels K</th>
        <td>
           <div id="formulario">
          <input id="original" type="text"
                 placeholder="32F"
                 size="50"
                 title = "Escribe un número seguido de una de las letras 'F' o 'C'"
-                pattern="^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?\s*$";
-
          />
-         <!--|a|ar|are|aren|arenh|arenhe|arenhei|arenheit)?\s*$"-->
-         <!--\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*(([cC(e|el|els|elsi|elsiu|elsius)?])|([fF(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)?)])\s*$"-->
-         <button onclick=calculate()><b>Enviar</button>
+         <!--pattern="^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?\s*$";
+-->
+       <button onclick=calculate()><b>Enviar</button>
        </div>
        </td>
      </tr>

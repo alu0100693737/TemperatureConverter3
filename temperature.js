@@ -8,20 +8,21 @@ function Medida(num, tipo) {//constructor
 }
 
 /**Constructor clase Temperatura*/
-function Temperatura(num,  tipo) {
+function Temperatura(num,  tipo, tiponew) {
+  this.typenew = tiponew;
   Medida.call(this, num, tipo);
 }
 
 Temperatura.prototype = new Medida(); //herencia
 
-function Celsius(num, tipo){
-  Temperatura.call(this, num, tipo);
+function Celsius(num, tipo, tiponew){
+  Temperatura.call(this, num, tipo, tiponew);
 }
-function Farenheit(num, tipo){
-  Temperatura.call(this, num, tipo);
+function Farenheit(num, tipo, tiponew){
+  Temperatura.call(this, num, tipo, tiponew);
 }
-function Kelvin(num, tipo){
-  Temperatura.call(this, num, tipo);
+function Kelvin(num, tipo, tiponew){
+  Temperatura.call(this, num, tipo, tiponew);
 }
 
 Celsius.prototype = new Temperatura(); //herencia
@@ -43,6 +44,11 @@ Medida.prototype.getTipo = function() {
   return this.tipo;
 }
 
+/**Metodo que devuelve el tipo de la expresion a evaluar*/
+Temperatura.prototype.getTipoNew = function() {
+  return this.typenew;
+}
+
 /**Metodo que asigna al atributo tipo una medida Celsius o Farenheit*/
 Medida.prototype.setTipo = function(tipo) {
   getTipo() = tipo;
@@ -56,27 +62,39 @@ Medida.prototype.mensajeError = function() {
 
 /**Determina si el tipo es Celsius o Farenheit*/
 Celsius.prototype.getMedida = function() {
-  var result, result1;
+  var result;
+  if((this.typenew == 'f') || (this.typenew == 'F')){
       result = (this.num * 9/5)+32; //farenheint
-      result1 = this.num + 273.15;//kelvin
-      result = result.toFixed(2)+ " Farenheit and "+ result1.toFixed(2) + " Kelvin";
+      result = result.toFixed(2)+ " Farenheit";
+  }else  if((this.typenew == 'k') || (this.typenew == 'K')){
+
+      result = this.num + 273.15;//kelvin
+      result = result.toFixed(2) + " Kelvin";
+    }
     return result;
 }
 
 Farenheit.prototype.getMedida = function() {
-  var result, result1;
-  result = (this.num - 32)*5/9; //celsius
-  result1 = 5*(this.num -32)/9 + 273.15; //kelvin
-  result = result.toFixed(2)+" Celsius and " + result1.toFixed(2) + " Kelvin";
+  var result;
+  if((this.typenew == 'c') || (this.typenew == 'C')){
+    result = (this.num - 32)*5/9; //celsius
+    result = result.toFixed(2)+" Celsius";
+  }else  if((this.typenew == 'k') || (this.typenew == 'K')){
+    result = 5*(this.num -32)/9 + 273.15; //kelvin
+    result = result.toFixed(2) + " Kelvin";
+  }
   return result;
 }
 
 Kelvin.prototype.getMedida = function() {
-  var result, result1;
-  console.log("Estamos ante un kelvin");
-  result = this.num - 273.15;
-  result1 = 9*(this.num -273.15)/5 + 32;
-  result = result.toFixed(2)+" Celsius and " + result1.toFixed(2) + " Farenheit";
+  var result;
+  if((this.typenew == 'c') || (this.typenew == 'C')){
+    result = this.num - 273.15;
+    result = result.toFixed(2)+" Celsius ";
+  }else if((this.typenew == 'f') || (this.typenew == 'F')){
+    result = 9*(this.num -273.15)/5 + 32;
+    result = result.toFixed(2) + " Farenheit";
+  }
   return result;
 }
 
@@ -84,10 +102,36 @@ Kelvin.prototype.getMedida = function() {
 function calculate() {
   var temp = original.value;
   //expresion regular. Recordar ?: matches
-  /*var regexp = XRegExp('(?<expresion>\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK]))' +
-                      '(?<to> to)' +
-                      '(?<cambio> [fFcCkK]$)ccc', 'x');*/
-  var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?\s*$/;
+  /*var date = XRegExp('(?<year>  \s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?\s* (to|TO|To)?\s*[CcFfKk]\s*$)  # year  \n\
+                      (?<month> [0-9]{2} ) -?  # month \n\
+                      (?<day>   [0-9]{2} )     # day   ', 'x');
+
+                      var match = XRegExp.exec('32F to C 05-03', date);
+
+                      if(match) {
+                        console.log("HEYSSS");
+                      }
+  var date = XRegExp('(?<expresion>  ( [-+]?  \d+ (?:\.  \d+  )?  (?:e  [+-]?  \d+  )?  ) (?:  \s*  ([cCfFkK])  \s*  )) # expresion \n\
+                      (?<month> [0-9]{2} ) -?  # month \n\
+                      (?<day>   [0-9]{2} )     # day   ', 'x');
+
+  // XRegExp.exec gives you named backreferences on the match result
+  var match = XRegExp.exec(original.value, date);
+
+  if(match) {
+    console.log("HEYSSS");
+  }
+
+
+
+  //^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?\s* (to|TO|To)?\s*[CcFfKk]\s*$
+
+      /*'s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])) \s* \n\
+                              (?<to> (to|TO|To)?  \s*  \n\
+                              (?<final> ([CcFfKk])     ', 'x');*/
+  var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?\s* (to|TO|To)?\s*([CcFfKk])$/
+//var m = XRegExp.exec(temp, regexp);
+  //var m = XRegExp.exec(temp, regexp);
   var m = temp.match(regexp);
   if (m) {
     for (var i = 0; i < m.length; i++) {
@@ -95,13 +139,15 @@ function calculate() {
     }
     var num = m[1];
     var type = m[2];
+    var typenew = m[m.length- 1];
+    console.log(typenew);
     num = parseFloat(num);
     if (type == 'c' || type == 'C') {
-      var resultado = new Celsius(num, type);
+      var resultado = new Celsius(num, type, typenew);
     }else if (type == 'f' || type == 'F') {
-      var resultado = new Farenheit(num, type);
+      var resultado = new Farenheit(num, type, typenew);
     }else if (type == 'k' || type == 'K') {
-      var resultado = new Kelvin(num, type);
+      var resultado = new Kelvin(num, type, typenew);
     }else{//Esta condicion no debe darse
       converted.innerHTML = "ERROR! Try something like '-8.2e-3 C' instead!!!!";
     }
