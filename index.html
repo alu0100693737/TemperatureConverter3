@@ -7,31 +7,34 @@
      <link href="global.css" rel="stylesheet" type="text/css">
 
      <script type="text/javascript" src="temperature.js"></script>
+     <script type="text/javascript" src="http://xregexp.com/v/3.1.0/xregexp-all.js"></script>
+
   </head>
   <body>
     <center>
-      <br><br>
-    <h1>Temperature Converter</h1>
-    <br><br>
-
+      <br>
+    <h1>Temperature Converter</h1><br>
+    <h3>Celsius, Fahrenheit and Kelvin</h3><br><br>
 
     <table>
      <tr>
-       <th>Enter  Temperature (examples: 32F, 45C, -2.5f):</th>
+       <th >Enter  Temperature (examples): <div style="text-transform: none;"> <br> *   132Fare to C &nbsp<br> * 45kelvin &nbsp to C <br> * -2.5e-2 &nbsp Cels &nbsp K</th>
        <td>
-         <form id="formulario" onsubmit="calculate();">
+          <div id="formulario">
          <input id="original" type="text"
                 placeholder="32F"
                 size="50"
                 title = "Escribe un número seguido de una de las letras 'F' o 'C'"
-                pattern="^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfF])(e|el|els|elsi|elsiu|elsius|a|ar|are|aren|arenh|arenhe|arenhei|arenheit)?\s*$"
          />
-         </form>
+         <!--pattern="^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?\s*$";
+-->
+       <button onclick=calculate()><b>Enviar</button>
+       </div>
        </td>
      </tr>
      <tr>
        <th><br>Converted Temperature: &nbsp   </th>
-       <td><br><span class="output" id="converted"></span></td>
+       <td><br><div id="converted"></div></td>
      </tr>
    </table>
     <!--<table>
@@ -48,7 +51,7 @@
     <br><br><br><a href="./tests">Tests</a> <a href="https://github.com/alu0100693737/ConversorTemperatura2/tree/gh-pages">Repositorio</a><br><br><br>
     <a href="https://github.com/alu0100693737">My Github</a> <a href="http://alu0100693737.github.io/">Mi página personal</a> <a href="./pattern.html">Patrones Expresiones Regulares</a><br>
     <br><br>
-    <center><div id=enlaces>
+    <!--<center><div id=enlaces>
 
       <a id=link href="https://nodejs.org" target="_blank">NodeJS</a>
       <a id=link href="http://expressjs.com"target="_blank">Express</a>
@@ -58,7 +61,7 @@
       <a id=link href="https://c9.io"target="_blank">Cloud 9 IDE</a>
       <a id=link href="http://daringfireball.net/projects/markdown/"target="_blank">Markdown</a>
       <a id=link href="http://www.w3schools.com/jsref/jsref_obj_regexp.asp"target="_blank">Regex JavaScript</a>
-    </div></center>
+    </div></center>-->
     <br>
     <p><strong>Iván García Campos </strong></p><br>
   </center>
