@@ -23,7 +23,7 @@
 
 ### Despliegue en github.io
 
-* http://alu0100693737.github.io/ConversorTemperatura2/
+* http://alu0100693737.github.io/Prct02PL/
 
 ### Pag personal
 
