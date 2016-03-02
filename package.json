@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "dependencies": {},
   "devDependencies": {
     "chai": "*",
@@ -28,4 +29,29 @@
   "author": "Casiano",
   "license": "ISC",
   "homepage": "http://alu0100693737.github.io/ConversorTemperatura2/"
+=======
+  "name": "Conversor",
+  "version": "0.0.1",
+  "description": "Conversor javascript de tipos",
+  "main": "conversor.js",
+  "scripts": {
+    "test": "mocha test",
+    "chai": "curl https://raw.githubusercontent.com/chaijs/chai/master/chai.js -o test/chai.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aluXXXXXXX/STW03.git"
+  },
+  "keywords": [
+    "conversor"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aluXXXXXXX/STW03/issues"
+  },
+  "homepage": "https://github.com/aluXXXXXXX/STW03",
+  "devDependencies": {
+  }
+>>>>>>> 71ebd75c09a59c58df19696e5bcac737e25e9864
 }

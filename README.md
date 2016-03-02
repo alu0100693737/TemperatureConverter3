@@ -7,9 +7,10 @@
 * Uso de clases y herencia en JavaScript (prototype)
 * Encapsulacion
 * Uso de la clase Medida -> Temperatura -> : Celsius, Farenheit y Kelvin
+* RegExp extendidas.
 * Uso de pruebas con Mocha y Chai
 * Gulpfile
-* RegExp extendidas? No funciona XRegExp not defined
+
 
 ### Que aprendimos
 
