@@ -110,36 +110,29 @@ function calculate() {
 
                       if(match) {
                         console.log("HEYSSS");
-                      }
-  var date = XRegExp('(?<expresion>  ( [-+]?  \d+ (?:\.  \d+  )?  (?:e  [+-]?  \d+  )?  ) (?:  \s*  ([cCfFkK])  \s*  )) # expresion \n\
-                      (?<month> [0-9]{2} ) -?  # month \n\
-                      (?<day>   [0-9]{2} )     # day   ', 'x');
+                      }*/
+  var dato = XRegExp('(?<expresion>  ([-+]?[0-9]+(?:\.[0-9]+)?(?:e[+-]?[0-9]+)?)[ ]*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?) # expresion \n\
+                      (?<opcional> [ ]*([Tt][oO])?[ ]*)   #opcional  \n\
+                      (?<medida>   [ ]*[CcKkFf])   #medida ', 'x');
 
   // XRegExp.exec gives you named backreferences on the match result
-  var match = XRegExp.exec(original.value, date);
+  var match = XRegExp.exec(original.value, dato);
 
   if(match) {
     console.log("HEYSSS");
   }
-
-
-
-  //^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?\s* (to|TO|To)?\s*[CcFfKk]\s*$
-
-      /*'s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])) \s* \n\
-                              (?<to> (to|TO|To)?  \s*  \n\
-                              (?<final> ([CcFfKk])     ', 'x');*/
-  var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?\s* (to|TO|To)?\s*([CcFfKk])$/
-//var m = XRegExp.exec(temp, regexp);
+//Expresion normal equivalente
+  //var regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(a|ar|are|aren|arenh|arenhe|arenhei|arenheit)|(e|el|elv|elvi|elvin))?\s* (to|TO|To)?\s*([CcFfKk])$/ ;
   //var m = XRegExp.exec(temp, regexp);
-  var m = temp.match(regexp);
-  if (m) {
-    for (var i = 0; i < m.length; i++) {
-       console.log(m[i]);
-    }
-    var num = m[1];
-    var type = m[2];
-    var typenew = m[m.length- 1];
+  //var m = XRegExp.exec(temp, regexp);
+  /*var m = temp.match(regexp);
+  if(m) {
+    console.log("HEYSSS");
+  }*/
+  if (match) {
+    var num = match[2];
+    var type = match[3];
+    var typenew = match.medida;
     console.log(typenew);
     num = parseFloat(num);
     if (type == 'c' || type == 'C') {
