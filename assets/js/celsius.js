@@ -1,3 +1,4 @@
+(function(exports){//clausura
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 function Celsius(num, tipo, tiponew){
   Temperatura.call(this, num, tipo, tiponew);
@@ -18,3 +19,5 @@ Celsius.prototype.getMedida = function() {
     }
     return result;
 }
+exports.Celsius = Celsius;
+})(this);//clausura

@@ -1,4 +1,4 @@
-//(function(exports){//clausura
+(function(exports){//clausura
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 /**Constructor clase Temperatura*/
 function Temperatura(num,  tipo, tiponew) {
@@ -12,5 +12,5 @@ Temperatura.prototype = new Medida(); //herencia
 Temperatura.prototype.getTipoNew = function() {
   return this.typenew;
 }
-
-//})(this);//clausura
+exports.Temperatura = Temperatura;
+})(this);//clausura

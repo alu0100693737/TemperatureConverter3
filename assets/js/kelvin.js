@@ -1,3 +1,4 @@
+(function(exports){//clausura
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 function Kelvin(num, tipo, tiponew){
   Temperatura.call(this, num, tipo, tiponew);
@@ -16,3 +17,5 @@ Kelvin.prototype.getMedida = function() {
   }
   return result;
 }
+exports.Kelvin = Kelvin;
+})(this);//clausura

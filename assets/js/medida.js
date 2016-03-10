@@ -1,3 +1,4 @@
+(function(exports){//clausura
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
 function Medida(val){
@@ -38,3 +39,5 @@ Medida.prototype.mensajeError = function() {
     converted.innerHTML = "ERROR! Try something like '-8.2e-3 C' instead";
     console.error("Esta condicion no deberia ocurrir");
 }
+exports.Medida = Medida;
+})(this);//clausura
