@@ -2,8 +2,16 @@
 
 ## Práctica: Práctica OOP en JS
 ###Conversor en JavaScript de grados Celsius, Farenheit y Kelvin
+##Que aprendemos
+* Mas sobre Encapsulacion
+* Code Smell
+* Swicth Statements
+* Clausuras
+* Añadiendo Footer Skeleton
+* Posibilidad de Constructor Medida un solo parametro
+* Uso de Favicon
 
-###Que aprendemos
+##Que aprendimos
 * Uso de clases y herencia en JavaScript (prototype)
 * Encapsulacion
 * Uso de la clase Medida -> Temperatura -> : Celsius, Farenheit y Kelvin
