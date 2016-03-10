@@ -1,4 +1,12 @@
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
+
+function Medida(val){
+var exp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([fFcC])/;
+ var valor = val.match(exp);
+ this.num = parseFloat(valor[1]);
+ this.tipo = valor[2];
+  console.log("HEYS" + val);
+}
 /**Constructor 'clase' Medida*/
 function Medida(num, tipo) {//constructor
   this.num = num;
