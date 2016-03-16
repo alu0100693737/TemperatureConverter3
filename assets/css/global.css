@@ -9,7 +9,7 @@ th, td      {
                background-color: rgba(255, 255, 255, 0.7);
 
             }     /* Don't center table cells  */
-#converted  { color: black; text-transform: uppercase;
+#converted  { color: #8A2908; text-transform: uppercase;
 font-family: "Tw Cen MT", cursive;font-weight: bold; font-size:large;          }     /* Calculated values in bold */
 input       {
               text-align: right;       /* Align input to the right  */
@@ -20,8 +20,8 @@ input       {
 body
 {
  background-color: black;
- background-image: url("fondotests.jpg");
-background-size: 100%;
+ background-image: url("textures.jpg");
+background-size: 90%;
 background-position: center;
 background-repeat: no-repeat;
 background-attachment: fixed;
@@ -42,13 +42,24 @@ h6 {
     font-weight: normal;
     text-transform: uppercase;
     font-family: "Tw Cen MT", cursive;
+    background-color: rgba(213, 17, 0, 0.6);
     padding: 5px 15px;
     color: black;
     display:inline-block;
     border-radius: 10px 10px 10px 10px;
 }
 
+#enlaces{
+  position: relative;
 
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 25px;
+    display:inline-block;
+
+
+  }
   #perfil{
 
     font-size: 20px;
@@ -59,4 +70,33 @@ h6 {
   h2:hover{
     color: #fff;
     position: relative;
+  }
+
+
+  a:hover {
+    color: #fff;
+    position: relative;
+  }
+
+  a[title]:hover:after {
+    content: attr(title);
+    padding: 4px 8px;
+    color: #333;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 20;
+    white-space: nowrap;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0px 0px 4px #222;
+    -webkit-box-shadow: 0px 0px 4px #222;
+    box-shadow: 0px 0px 4px #222;
+    background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eeeeee),color-stop(1, #cccccc));
+    background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
   }
