@@ -61,30 +61,11 @@ describe("Pruebas Sinon", function() {
 
   // ...
 
-  /*describe("#calculate", function() {
-    it("should log an error if target is passed in", function() {
-      (new calculate2(20));
-
+  describe("#main", function() {
+    it("No hay logs ni errores", function() {
+      (new main());
       sinon.assert.notCalled(console.log);
-      sinon.assert.calledOnce(console.error);
-      sinon.assert.calledWithExactly(console.error, "missing target")
-    });
-    it("No hay matches con la ExpReg", function() {
-      (new calculate());
-
-      sinon.assert.notCalled(console.log);
-      sinon.assert.calledOnce(console.error);
-      sinon.assert.calledWithExactly(console.error, "No encontrado matches")
-
-    });*/
-
-
-    /*it("should log greetings", function() {
-      var greetings = (new Cow("Kate")).greets("Baby");
-
       sinon.assert.notCalled(console.error);
-      sinon.assert.calledOnce(console.log);
-      sinon.assert.calledWithExactly(console.log, "Kate greets Baby")
     });
-  });*/
+  });
 });
