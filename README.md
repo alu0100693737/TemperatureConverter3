@@ -4,8 +4,13 @@
 ###Conversor en JavaScript de grados Celsius, Farenheit y Kelvin
 
 [![Build Status](https://travis-ci.org/alu0100693737/ConversorTemperatura2.svg?branch=gh-pages)](https://travis-ci.org/alu0100693737/ConversorTemperatura2)
+#Que aprendemos
+* Code Smell funcionando correctamente con el uso de measures
+* Uso de Chai Mocha y Sinon para pruebas
+* Blanket funcionando. Coverage Code alto
+* Gulpfile minified y clean
 
-##Que aprendemos
+##Que aprendimos
 * Mas sobre Encapsulacion
 * Code Smell
 * Swicth Statements
