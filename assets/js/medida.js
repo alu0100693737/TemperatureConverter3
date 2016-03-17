@@ -8,36 +8,39 @@ var exp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([fFcC])/;
  this.num = parseFloat(valor[1]);
  this.tipo = valor[2];
 }
+
 /**Constructor 'clase' Medida*/
-function Medida(num, tipo) {//constructor
-  this.num = num;
-  this.tipo = tipo;
+function Medida(valor,tipo){
+
+this.value = valor;
+this.type = tipo;
 }
 
-/**Metodo que devuelve la parte numerica de la expresion a evaluar*/
-Medida.prototype.getNum = function() {
-  return this.num;
+
+Medida.match= function(){
+  var valor = XRegExp.exec(convert.value, regexp2);
+  return valor;
 }
 
-/**Metodo que asigna al atributo num un valor*/
-Medida.prototype.setNum = function(num) {
-  getNum() = num;
-}
+Medida.measures={};
 
-/**Metodo que devuelve el tipo de la expresion a evaluar*/
-Medida.prototype.getTipo = function() {
-  return this.tipo;
-}
+Medida.convertir = function(valor) {
+  var measures = Medida.measures;
 
-/**Metodo que asigna al atributo tipo una medida Celsius o Farenheit*/
-Medida.prototype.setTipo = function(tipo) {
-  getTipo() = tipo;
-}
-
-/**Metodo que retorna error. No debe poder ejecutarse esta funcion. Error grave*/
-Medida.prototype.mensajeError = function() {
-    converted.innerHTML = "ERROR! Try something like '-8.2e-3 C' instead";
-    console.error("Esta condicion no deberia ocurrir");
-}
-exports.Medida = Medida;
-})(this);//clausura
+  var match = Medida.match(valor);
+  if (match) {
+    var numero = match.numero,
+        tipo   = match.tipo,
+        destino = match.destino;
+    try {
+      var source = new measures[tipo](numero);  // new Fahrenheit(32)
+      var target = "to" + measures[destino].name; // "toCelsius"
+      return source[target]().toFixed(2) + " "+target; // "0 Celsius"
+    }
+    catch(err) {
+      return 'Undefined convert "'+tipo+'" to "'+destino+'"';
+    }
+  }
+  else
+    return "ERROR! Try something like '-8.2e-3 C' instead";
+};
