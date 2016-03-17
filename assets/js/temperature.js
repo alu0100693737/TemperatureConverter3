@@ -12,68 +12,6 @@ Temperatura.prototype.get_nuevotipo=function(){//get para trabajar con nuestro n
   return this.nuevoTipo;
 }
 
-/********** CELSIUS **********/
-
-function Celsius(valor,tipo,nuevoTipo) {
-  Temperatura.call(this,valor,tipo,nuevoTipo);
-}
-
-Celsius.prototype = new Temperatura();//heredamos de temp
-Celsius.prototype.constructor = Celsius;
-Medida.measures.c = Celsius;
-Medida.measures.C = Celsius;
-
-Celsius.prototype.toFarenheit = function(){
-  return ((this.value * 9/5) + 32);
-};
-
-Celsius.prototype.toKelvin = function(){
-  console.log(parseFloat(this.value) + 273.15);
-  return (parseFloat(this.value) + 273.15);
-};
-
-
-
-function Farenheit(valor,tipo,nuevoTipo){
-  Temperatura.call(this,valor,tipo,nuevoTipo);
-}
-
-Farenheit.prototype = new Temperatura();
-Farenheit.prototype.constructor = Farenheit;
-Medida.measures.f=Farenheit;
-Medida.measures.F = Farenheit;
-
-Farenheit.prototype.toCelsius = function(){
-  return ((this.value - 32)* 5/9);
-};
-
-Farenheit.prototype.toKelvin = function(){
-  return (((this.value - 32)*5/9) + 273);
-};
-
-/**********************************/
-
-/************* Kelvin ***************/
-
-function Kelvin(valor,tipo,nuevoTipo){
-  Temperatura.call(this,valor, tipo,nuevoTipo);
-
-}
-Kelvin.prototype = new Temperatura();
-Kelvin.prototype.constructor = Kelvin;
-
-Medida.measures.k=Kelvin;
-Medida.measures.K = Kelvin;
-
-Kelvin.prototype.toCelsius = function(){
-  return (this.value - 273.15);
-};
-
-Kelvin.prototype.toFarenheit = function(){
-  return (((this.value - 273)*9/5)+32);
-};
-
-/*************************************/
 
 
 

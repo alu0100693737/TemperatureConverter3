@@ -37,8 +37,9 @@ Medida.convertir = function(valor) {
         destino = match.destino;
     try {
       var source = new measures[tipo](numero, tipo, destino);  // new Fahrenheit(32)
+      var tiporesultado = measures[destino].name;
       var target = "to" + measures[destino].name; // "toCelsius"
-      return source[target]().toFixed(2) + " "+target; // "0 Celsius"
+      return source[target]().toFixed(2) + " "+tiporesultado; // "0 Celsius"
     }
     catch(err) {
       return 'Undefined convert "'+tipo+'" to "'+destino+'"';

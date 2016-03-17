@@ -11,17 +11,17 @@ suite('temperature', function() {
     test('32F to C = 0C', function() {
         original.value = "32F to C";
         main();
-        assert.deepEqual(converted.innerHTML, "0.00 toCelsius");
+        assert.deepEqual(converted.innerHTML, "0.00 Celsius");
     });
     test('12F to C = -11.1C', function() {
         original.value = "12F to C";
         main();
-        assert.deepEqual(converted.innerHTML, "-11.11 toCelsius");
+        assert.deepEqual(converted.innerHTML, "-11.11 Celsius");
     });
     test('6.1f to k = 43F', function() {
         original.value = "6.1f to k";
         main();
-        assert.deepEqual(converted.innerHTML, "258.61 toKelvin");
+        assert.deepEqual(converted.innerHTML, "258.61 Kelvin");
     });
     test('3te = Numero introducido no valido', function() {
         original.value = "3te";
