@@ -1,5 +1,5 @@
 //(function(exports){//clausura
-//"use strict"; // Use ECMAScript 5 strict mode in browsers that support it
+"use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
 var regexp2 = XRegExp('^(\\s*)                                    \n' +
                '(?<numero> [-+]?[0-9]+(\.[0-9]+)?(?:e[+-]?[0-9]+)?)\n' +
@@ -11,13 +11,6 @@ var regexp2 = XRegExp('^(\\s*)                                    \n' +
                '(?<destino> [fckCFK]) #destino                     \n' +
                '(\\s*)$','ix');
 
-/** Constructor con un solo parametro*/
-function Medida(val){
-var exp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([fFcC])/;
- var valor = val.match(exp);
- this.num = parseFloat(valor[1]);
- this.tipo = valor[2];
-}
 
 /**Constructor 'clase' Medida*/
 function Medida(valor,tipo){
@@ -43,7 +36,7 @@ Medida.convertir = function(valor) {
         tipo   = match.tipo,
         destino = match.destino;
     try {
-      var source = new measures[tipo](numero);  // new Fahrenheit(32)
+      var source = new measures[tipo](numero, tipo, destino);  // new Fahrenheit(32)
       var target = "to" + measures[destino].name; // "toCelsius"
       return source[target]().toFixed(2) + " "+target; // "0 Celsius"
     }

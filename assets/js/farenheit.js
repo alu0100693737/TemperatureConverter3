@@ -2,9 +2,7 @@
 //"use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
 function Farenheit(valor,tipo,nuevoTipo){
-
   Temperatura.call(this,valor,tipo,nuevoTipo);
-
 }
 Farenheit.prototype = new Temperatura();
 Farenheit.prototype.constructor = Farenheit;

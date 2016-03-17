@@ -10,33 +10,33 @@ suite('temperature', function() {
     });
     test('32F to C = 0C', function() {
         original.value = "32F to C";
-        calculate();
-        assert.deepEqual(converted.innerHTML, "0.00 Celsius");
+        main();
+        assert.deepEqual(converted.innerHTML, "0.00 toCelsius");
     });
     test('12F to C = -11.1C', function() {
         original.value = "12F to C";
-        calculate();
-        assert.deepEqual(converted.innerHTML, "-11.11 Celsius");
+        main();
+        assert.deepEqual(converted.innerHTML, "-11.11 toCelsius");
     });
     test('6.1f to k = 43F', function() {
         original.value = "6.1f to k";
-        calculate();
-        assert.deepEqual(converted.innerHTML, "258.76 Kelvin");
+        main();
+        assert.deepEqual(converted.innerHTML, "258.61 toKelvin");
     });
     test('3te = Numero introducido no valido', function() {
         original.value = "3te";
-        calculate();
+        main();
         assert.match(converted.innerHTML, /ERROR/);
     });
 
     test('45C to k = 113.0 Farenheit', function() {
         original.value = "45C to k";
-        calculate();
+        main();
         assert.deepEqual(converted.innerHTML, "318.15 Kelvin");
     });
     test('5X = error', function() {
         original.value = "5X";
-        calculate();
+        main();
         assert.match(converted.innerHTML, /ERROR/);
     });
 });
