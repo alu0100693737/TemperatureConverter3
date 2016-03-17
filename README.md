@@ -41,7 +41,11 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 
 ### Despliegue en github.io
 
-* http://alu0100693737.github.io/Prct02PL/
+* http://alu0100693737.github.io/ConversorTemperatura2/
+
+### Tests
+
+* http://alu0100693737.github.io/ConversorTemperatura2/tests
 
 ### Pag personal
 
