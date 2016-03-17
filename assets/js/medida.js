@@ -1,4 +1,4 @@
-//(function(exports){//clausura
+(function(exports){//clausura
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
 var regexp2 = XRegExp('^(\\s*)                                    \n' +
@@ -48,3 +48,5 @@ Medida.convertir = function(valor) {
   else
     return " NO matches ERROR! Try something like '-8.2e-3 C' instead";
 };
+exports.Medida=Medida;
+})(this);

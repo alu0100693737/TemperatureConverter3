@@ -1,5 +1,5 @@
-//(function(exports){//clausura
-//"use strict"; // Use ECMAScript 5 strict mode in browsers that support it
+(function(exports){//clausura
+"use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 Celsius.prototype = new Temperatura();//heredamos de temp
 Celsius.prototype.constructor = Celsius;
 Medida.measures.c = Celsius;
@@ -17,5 +17,5 @@ Celsius.prototype.toFarenheit = function(){
 Celsius.prototype.toKelvin = function(){
   return (parseFloat(this.value) + 273.15);
 };
-//exports.Celsius = Celsius;
-//})(this);//clausura
+exports.Celsius = Celsius;
+})(this);//clausura

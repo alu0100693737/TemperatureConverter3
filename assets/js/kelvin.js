@@ -1,5 +1,5 @@
-//(function(exports){//clausura
-//"use strict"; // Use ECMAScript 5 strict mode in browsers that support it
+(function(exports){//clausura
+"use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
 function Kelvin(valor,tipo,nuevoTipo){
   Temperatura.call(this,valor, tipo,nuevoTipo);
@@ -19,5 +19,5 @@ Kelvin.prototype.toFarenheit = function(){
   return (((this.value - 273)*9/5)+32);
 };
 
-//exports.Kelvin = Kelvin;
-//})(this);//clausura
+exports.Kelvin = Kelvin;
+})(this);//clausura
