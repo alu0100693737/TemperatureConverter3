@@ -23,3 +23,6 @@ gulp.task('minify', function () {
 gulp.task('clean', function(cb) {
   del(['minified/*'], cb);
 });
+
+gulp.task('default', function() {
+});
