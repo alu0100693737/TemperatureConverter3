@@ -1,5 +1,15 @@
-(function(exports){//clausura
-"use strict"; // Use ECMAScript 5 strict mode in browsers that support it
+//(function(exports){//clausura
+//"use strict"; // Use ECMAScript 5 strict mode in browsers that support it
+
+var regexp2 = XRegExp('^(\\s*)                                    \n' +
+               '(?<numero> [-+]?[0-9]+(\.[0-9]+)?(?:e[+-]?[0-9]+)?)\n' +
+               '(\\s*)                                             \n' +
+               '(?<tipo> [fckCFK]) #tipo                           \n' +
+               '(\\s*)                                             \n' +
+               '(to)?                                              \n' +
+               '(\\s*)                                             \n' +
+               '(?<destino> [fckCFK]) #destino                     \n' +
+               '(\\s*)$','ix');
 
 /** Constructor con un solo parametro*/
 function Medida(val){
@@ -18,7 +28,7 @@ this.type = tipo;
 
 
 Medida.match= function(){
-  var valor = XRegExp.exec(convert.value, regexp2);
+  var valor = XRegExp.exec(original.value, regexp2);
   return valor;
 }
 
@@ -42,5 +52,5 @@ Medida.convertir = function(valor) {
     }
   }
   else
-    return "ERROR! Try something like '-8.2e-3 C' instead";
+    return " NO matches ERROR! Try something like '-8.2e-3 C' instead";
 };

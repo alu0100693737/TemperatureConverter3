@@ -1,21 +1,23 @@
-(function(exports){//clausura
-"use strict"; // Use ECMAScript 5 strict mode in browsers that support it
-function Kelvin(num, tipo, tiponew){
-  Temperatura.call(this, num, tipo, tiponew);
-}
+//(function(exports){//clausura
+//"use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
-Kelvin.prototype = new Temperatura(); //herencia
+function Kelvin(valor,tipo,nuevoTipo){
+  Temperatura.call(this,valor, tipo,nuevoTipo);
 
-Kelvin.prototype.getMedida = function() {
-  var result;
-  if((this.typenew == 'c') || (this.typenew == 'C')){
-    result = this.num - 273.15;
-    result = result.toFixed(2)+" Celsius ";
-  }else if((this.typenew == 'f') || (this.typenew == 'F')){
-    result = 9*(this.num -273.15)/5 + 32;
-    result = result.toFixed(2) + " Farenheit";
-  }
-  return result;
 }
-exports.Kelvin = Kelvin;
-})(this);//clausura
+Kelvin.prototype = new Temperatura();
+Kelvin.prototype.constructor = Kelvin;
+
+Medida.measures.k=Kelvin;
+Medida.measures.K = Kelvin;
+
+Kelvin.prototype.toCelsius = function(){
+  return (this.value - 273.15);
+};
+
+Kelvin.prototype.toFarenheit = function(){
+  return (((this.value - 273)*9/5)+32);
+};
+
+//exports.Kelvin = Kelvin;
+//})(this);//clausura

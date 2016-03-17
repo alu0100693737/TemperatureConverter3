@@ -1,16 +1,17 @@
-(function(exports){//clausura
-"use strict"; // Use ECMAScript 5 strict mode in browsers that support it
-/**Constructor clase Temperatura*/
-function Temperatura(num,  tipo, tiponew) {
-  this.typenew = tiponew;
-  Medida.call(this, num, tipo);
+//(function(exports){
+//  "use strict";
+
+function Temperatura(valor,tipo,nuevoTipo){
+  this.nuevoTipo = nuevoTipo;
+  Medida.call(this, valor, tipo);
+  /* tipo es opcional*/
 }
 
-Temperatura.prototype = new Medida(); //herencia
+Temperatura.prototype = new Medida();//heredamos
 
-/**Metodo que devuelve el tipo de la expresion a evaluar*/
-Temperatura.prototype.getTipoNew = function() {
-  return this.typenew;
+Temperatura.prototype.get_nuevotipo=function(){
+  return this.nuevoTipo;
 }
-exports.Temperatura = Temperatura;
-})(this);//clausura
+
+//exports.Temperatura=Temperatura;
+//})(this);

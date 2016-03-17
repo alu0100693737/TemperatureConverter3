@@ -1,6 +1,6 @@
 function main() {
      "use strict"
-     var valor     = document.getElementById('convert').value,
+     var valor     = document.getElementById('original').value,
          elemento  = document.getElementById('converted');
      elemento.innerHTML = Medida.convertir(valor);
 
