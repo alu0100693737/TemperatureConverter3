@@ -5,6 +5,8 @@
 
 [![Build Status](https://travis-ci.org/alu0100693737/ConversorTemperatura2.svg?branch=master)](https://travis-ci.org/alu0100693737/ConversorTemperatura2)
 
+<img src="https://github.com/alu0100693737/TemperatureConverter3/blob/gh-pages/assets/images/karma.PNG" width="200">
+
 #Que aprendemos
 * Uso de travis-ci
 * Mejora en Gulpfile
