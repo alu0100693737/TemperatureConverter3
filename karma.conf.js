@@ -23,9 +23,15 @@ module.exports = function(config) {
       'tests/mocha.js',
       'tests/chai.js',
       'tests/sinon-1.7.1.js',
+      'tests/index.html',
       'tests/tests.js',
       'tests/mocha.css',
-      'assets/js/*'
+      'assets/js/medida.js',
+      'assets/js/temperature.js',
+      'assets/js/celsius.js',
+      'assets/js/farenheit.js',
+      'assets/js/kelvin.js',
+      'assets/js/main.js'
     ],
 
     // list of files to exclude
@@ -63,7 +69,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['Chrome', 'Firefox'],
 
 
     // Continuous Integration mode

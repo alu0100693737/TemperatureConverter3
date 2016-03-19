@@ -11,38 +11,29 @@ suite('temperature', function() {
       var a = new Farenheit("32", "F", "C");
         assert.deepEqual(a.toCelsius(), 0);
     });
-    test('12k to C = -11.1C', function() {
+    test('12k to C = -261.15C', function() {
       var a = new Kelvin("12", "k", "C");
-        assert.deepEqual(a.toCelsius(), -11.11);
+        assert.deepEqual(a.toCelsius(), -261.15);
     });
-    test('6.1f to k = 43F y ', function() {
+    test('6.1f', function() {
         var a = new Farenheit("6.1");
-        assert.deepEqual(a.toKelvin(), 258.61);
-        assert.deepEqual(a.toCelsius(), )
-    });
-    test('3te = Numero introducido no valido', function() {
-        original.value = "3te";
-        main();
-        assert.match(converted.innerHTML, /ERROR/);
-    });
-
-    test('45C to k = 113.0 Farenheit', function() {
-        original.value = "45C to k";
-        main();
-        assert.deepEqual(converted.innerHTML, "318.15 Kelvin");
+        assert.deepEqual(a.toKelvin().toFixed(2), "258.61");
+        assert.deepEqual(a.toCelsius().toFixed(2), '-14.39');
     });
     test('39k to c = -234.15 Celsius', function() {
-        original.value = "39k to c";
-        main();
-        assert.deepEqual(converted.innerHTML, "-234.15 Celsius");
+      var a = new Kelvin("39");
+        assert.deepEqual(a.toCelsius().toFixed(2), '-234.15');
     });
-    test('5X = error', function() {
-        original.value = "5X";
-        main();
-        assert.match(converted.innerHTML, /ERROR/);
+    test('0c to f = 32 Celsius', function() {
+      var a = new Celsius("0");
+        assert.deepEqual(a.toFarenheit().toFixed(2), '32.00');
     });
-});
+    test('39c to k = 312.15 Kelvin', function() {
+      var a = new Celsius("39");
+        assert.deepEqual(a.toKelvin().toFixed(2), '312.15');
+    });
 
+});
 /*
 describe("Pruebas Sinon", function() {
   var sandbox;
@@ -70,5 +61,4 @@ describe("Pruebas Sinon", function() {
       sinon.assert.notCalled(console.error);
     });
   });
-});
-*/
+});*/
