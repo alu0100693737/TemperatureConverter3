@@ -3,7 +3,6 @@ var assert = chai.assert;
 suite('temperature', function() {
    setup(function(){
       if (typeof __html__ !== 'undefined') {
-          document.body.innerHTML = __html__['tests/index.html'];
           original = document.getElementById('original');
           converted = document.getElementById('converted');
       }
@@ -34,6 +33,11 @@ suite('temperature', function() {
         main();
         assert.deepEqual(converted.innerHTML, "318.15 Kelvin");
     });
+    test('39k to c = -234.15 Celsius', function() {
+        original.value = "39k to c";
+        main();
+        assert.deepEqual(converted.innerHTML, "-234.15 Celsius");
+    });
     test('5X = error', function() {
         original.value = "5X";
         main();
@@ -41,7 +45,7 @@ suite('temperature', function() {
     });
 });
 
-
+/*
 describe("Pruebas Sinon", function() {
   var sandbox;
 
@@ -69,3 +73,4 @@ describe("Pruebas Sinon", function() {
     });
   });
 });
+*/
