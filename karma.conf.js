@@ -23,6 +23,7 @@ module.exports = function(config) {
       'tests/mocha.js',
       'tests/chai.js',
       'tests/sinon-1.7.1.js',
+      'http://xregexp.com/v/3.1.0/xregexp-all.js',
       'tests/index.html',
       'tests/tests.js',
       'tests/mocha.css',
