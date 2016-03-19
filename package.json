@@ -1,5 +1,15 @@
 {
-  "dependencies": {},
+  "name": "mocha-chai-sinon",
+  "version": "0.0.1",
+  "description": "See the tutorial at: https://nicolas.perriault.net/code/2013/testing-frontend-javascript-code-using-mocha-chai-and-sinon/",
+  "main": "main.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/crguezl/mocha-chai-sinon--example.git"
+  },
   "devDependencies": {
     "chai": "*",
     "del": "^2.2.0",
@@ -9,22 +19,20 @@
     "gulp-minify-html": "^1.0.6",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.8",
+    "karma-mocha": "^0.2.2",
     "mocha": "*"
   },
-  "name": "temperature",
-  "description": "ETSII ULL Grado de Informatica",
-  "version": "1.1.0",
-  "main": "main.js",
-  "directories": {
-    "test": "tests"
-  },
-  "scripts": {
-    "test": "open tests/index.html # mac OS",
-  },
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com:alu0100693737/ConversorTemperatura2.git"
-  },
+  "keywords": [
+    "mocha",
+    "chai",
+    "sinon",
+    "testing",
+    "javascript"
+  ],
   "author": "Iván García",
   "license": "ISC",
   "homepage": "http://alu0100693737.github.io/ConversorTemperatura2/"
