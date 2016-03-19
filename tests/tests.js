@@ -8,19 +8,17 @@ suite('temperature', function() {
       }
     });
     test('32F to C = 0C', function() {
-        original.value = "32F to C";
-        main();
-        assert.deepEqual(converted.innerHTML, "0.00 Celsius");
+      var a = new Farenheit("32", "F", "C");
+        assert.deepEqual(a.toCelsius(), 0);
     });
-    test('12F to C = -11.1C', function() {
-        original.value = "12F to C";
-        main();
-        assert.deepEqual(converted.innerHTML, "-11.11 Celsius");
+    test('12k to C = -11.1C', function() {
+      var a = new Kelvin("12", "k", "C");
+        assert.deepEqual(a.toCelsius(), -11.11);
     });
-    test('6.1f to k = 43F', function() {
-        original.value = "6.1f to k";
-        main();
-        assert.deepEqual(converted.innerHTML, "258.61 Kelvin");
+    test('6.1f to k = 43F y ', function() {
+        var a = new Farenheit("6.1");
+        assert.deepEqual(a.toKelvin(), 258.61);
+        assert.deepEqual(a.toCelsius(), )
     });
     test('3te = Numero introducido no valido', function() {
         original.value = "3te";

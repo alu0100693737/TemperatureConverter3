@@ -25,6 +25,7 @@ module.exports = function(config) {
       'tests/sinon-1.7.1.js',
       'tests/tests.js',
       'tests/mocha.css',
+      'assets/js/*'
     ],
 
     // list of files to exclude
