@@ -18,4 +18,3 @@ sudo: required
 branches:
   only:
     - gh-pages
-    - master

@@ -19,7 +19,21 @@
     "gulp-minify-html": "^1.0.6",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
-    "mocha": "*"
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chai-plugins": "^0.7.0",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-ie-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.8",
+    "karma-mocha": "^0.2.2",
+    "karma-opera-launcher": "^0.3.0",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "mocha": "*",
+    "phantomjs-prebuilt": "^2.1.6"
+  },
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
   },
   "keywords": [
     "mocha",
@@ -30,5 +44,5 @@
   ],
   "author": "Iván García",
   "license": "ISC",
-  "homepage": "http://alu0100693737.github.io/ConversorTemperatura2/"
+  "homepage": "http://alu0100693737.github.io/TemperatureConverter3/"
 }

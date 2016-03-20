@@ -1,47 +1,46 @@
 var assert = chai.assert;
-
+/*describe('template', function() {
+  it('should expose the templates to __html__', function() {
+    document.body.innerHTML = __html__['tests.html'];
+    expect(document.getElementById('original')).toBeDefined();
+  })
+})
+*/
 suite('temperature', function() {
    setup(function(){
       if (typeof __html__ !== 'undefined') {
-          document.body.innerHTML = __html__['tests/index.html'];
           original = document.getElementById('original');
           converted = document.getElementById('converted');
       }
     });
     test('32F to C = 0C', function() {
-        original.value = "32F to C";
-        main();
-        assert.deepEqual(converted.innerHTML, "0.00 Celsius");
+      var a = new Farenheit("32", "F", "C");
+        assert.deepEqual(a.toCelsius(), 0);
     });
-    test('12F to C = -11.1C', function() {
-        original.value = "12F to C";
-        main();
-        assert.deepEqual(converted.innerHTML, "-11.11 Celsius");
+    test('12k to C = -261.15C', function() {
+      var a = new Kelvin("12", "k", "C");
+        assert.deepEqual(a.toCelsius(), -261.15);
     });
-    test('6.1f to k = 43F', function() {
-        original.value = "6.1f to k";
-        main();
-        assert.deepEqual(converted.innerHTML, "258.61 Kelvin");
+    test('6.1f', function() {
+        var a = new Farenheit("6.1");
+        assert.deepEqual(a.toKelvin().toFixed(2), "258.61");
+        assert.deepEqual(a.toCelsius().toFixed(2), '-14.39');
     });
-    test('3te = Numero introducido no valido', function() {
-        original.value = "3te";
-        main();
-        assert.match(converted.innerHTML, /ERROR/);
+    test('39k to c = -234.15 Celsius', function() {
+      var a = new Kelvin("39");
+        assert.deepEqual(a.toCelsius().toFixed(2), '-234.15');
+    });
+    test('0c to f = 32 Celsius', function() {
+      var a = new Celsius("0");
+        assert.deepEqual(a.toFarenheit().toFixed(2), '32.00');
+    });
+    test('39c to k = 312.15 Kelvin', function() {
+      var a = new Celsius("39");
+        assert.deepEqual(a.toKelvin().toFixed(2), '312.15');
     });
 
-    test('45C to k = 113.0 Farenheit', function() {
-        original.value = "45C to k";
-        main();
-        assert.deepEqual(converted.innerHTML, "318.15 Kelvin");
-    });
-    test('5X = error', function() {
-        original.value = "5X";
-        main();
-        assert.match(converted.innerHTML, /ERROR/);
-    });
 });
-
-
+/*
 describe("Pruebas Sinon", function() {
   var sandbox;
 
@@ -69,3 +68,4 @@ describe("Pruebas Sinon", function() {
     });
   });
 });
+*/

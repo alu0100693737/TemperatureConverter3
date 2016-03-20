@@ -1,10 +1,19 @@
 # ETSII ULL Grado de Informatica
 
-## Práctica: Práctica OOP en JS
+## Práctica: Karma y Travis
 ###Conversor en JavaScript de grados Celsius, Farenheit y Kelvin
 
 [![Build Status](https://travis-ci.org/alu0100693737/ConversorTemperatura2.svg?branch=master)](https://travis-ci.org/alu0100693737/ConversorTemperatura2)
+
+<img src="https://github.com/alu0100693737/TemperatureConverter3/blob/gh-pages/assets/images/karma.PNG" width="1000">
+
 #Que aprendemos
+* Uso de travis-ci
+* Mejora en Gulpfile
+* Uso de Karma-Jasmine
+* Nuevos tests
+
+#Que aprendimos
 * Code Smell funcionando correctamente con el uso de measures
 * Uso de Chai Mocha y Sinon para pruebas
 * Blanket funcionando. Coverage Code alto
@@ -27,7 +36,6 @@
 * Uso de pruebas con Mocha y Chai
 * Gulpfile
 
-
 ### Que aprendimos
 
 * HTML básico
@@ -41,7 +49,7 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 
 ### Despliegue en github.io
 
-* http://alu0100693737.github.io/ConversorTemperatura2/
+* http://alu0100693737.github.io/TemperatureConverter3/
 
 ### Tests
 
@@ -53,4 +61,4 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 
 ### Repositorio Github
 
-* https://github.com/alu0100693737/ConversorTemperatura2/tree/gh-pages
+* https://github.com/alu0100693737/TemperatureConverter3/tree/gh-pages
