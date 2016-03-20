@@ -9,8 +9,8 @@
 
 #Que aprendemos
 * Uso de travis-ci
-* Mejora en Gulpfile
-* Uso de Karma-Jasmine
+* Mejora en Gulpfile, tareas nuevas
+* Uso de Karma-Mocha con Chrome, PahtomJS e IE
 * Nuevos tests
 
 #Que aprendimos
