@@ -11,7 +11,7 @@
 #Que aprendemos
 * Uso de travis-ci
 * Mejora en Gulpfile, tareas nuevas
-* Uso de Karma-Mocha con Chrome, PahtomJS e IE
+* Uso de Karma-Mocha con Chrome, PhantomJS e IE
 * Nuevos tests
 
 #Que aprendimos
