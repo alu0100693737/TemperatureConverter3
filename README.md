@@ -7,7 +7,7 @@
 [![Build Status](https://travis-ci.org/alu0100693737/TemperatureConverter3.svg?branch=master)](https://travis-ci.org/alu0100693737/TemperatureConverter3)
 
 <img src="https://github.com/alu0100693737/TemperatureConverter3/blob/gh-pages/assets/images/karma.PNG" width="1000">
-
+* Gulp-gh-pages agregado pero no usado al cambiar el diseño de gh-pages y borrar los tests
 #Que aprendemos
 * Uso de travis-ci
 * Mejora en Gulpfile, tareas nuevas
