@@ -6,6 +6,7 @@ var del     = require('del');
 var minifyHTML = require('gulp-minify-html');
 var minifyCSS  = require('gulp-minify-css');
 var karma   = require('gulp-karma');
+var ghPages = require('gulp-gh-pages');
 
 gulp.task('minify', function () {
   gulp.src('temperature.js')
@@ -20,6 +21,12 @@ gulp.task('minify', function () {
    .pipe(minifyCSS({keepBreaks:true}))
    .pipe(gulp.dest('./minified/'))
 });
+
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
+
 gulp.task('test', function() {
   // Be sure to return the stream
   return gulp.src([])
