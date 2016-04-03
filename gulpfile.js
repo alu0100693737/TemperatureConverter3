@@ -46,5 +46,5 @@ gulp.task('deploy', function() {
 });
 
 gulp.task('default', shell.task([
-  'gulp clean && gulp minify'
+  'gulp clean && gulp minify && gulp test'
 ]));
