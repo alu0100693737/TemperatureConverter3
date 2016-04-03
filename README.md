@@ -3,14 +3,14 @@
 ## Práctica: Karma y Travis
 ###Conversor en JavaScript de grados Celsius, Farenheit y Kelvin
 
-[![Build Status](https://travis-ci.org/alu0100693737/ConversorTemperatura2.svg?branch=master)](https://travis-ci.org/alu0100693737/ConversorTemperatura2)
+[![Build Status](https://travis-ci.org/alu0100693737/TemperatureConverter3.svg?branch=master)](https://travis-ci.org/alu0100693737/TemperatureConverter3)
 
 <img src="https://github.com/alu0100693737/TemperatureConverter3/blob/gh-pages/assets/images/karma.PNG" width="1000">
 
 #Que aprendemos
 * Uso de travis-ci
-* Mejora en Gulpfile
-* Uso de Karma-Jasmine
+* Mejora en Gulpfile, tareas nuevas
+* Uso de Karma-Mocha con Chrome, PahtomJS e IE
 * Nuevos tests
 
 #Que aprendimos
@@ -53,7 +53,7 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 
 ### Tests
 
-* http://alu0100693737.github.io/ConversorTemperatura2/tests
+* http://alu0100693737.github.io/TemperatureConverter3/tests/index.html
 
 ### Pag personal
 
