@@ -46,7 +46,7 @@ gulp.task('clean', function(cb) {
 
 gulp.task('default', ['minify'], function() {
   gulp.src([])
-     .pipe(karma({
+      .pipe(karma({
        configFile: 'karma.conf.js',
        action: 'watch'
      }));
